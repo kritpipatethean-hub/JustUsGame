@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy Brain Game Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1 class="glow-text">Easy Brain Game Hub</h1>
+            <p class="subtitle">Welcome to the ultimate arena for Earth and Noon</p>
+        </header>
+
+        <main id="auth-section" class="glass-panel">
+            <h2>Who is playing on this device?</h2>
+            <div class="player-selection">
+                <button id="btn-earth" class="player-btn earth-btn">I am Earth</button>
+                <button id="btn-noon" class="player-btn noon-btn">I am Noon</button>
+            </div>
+        </main>
+
+        <main id="hub-section" class="glass-panel hidden">
+            <h2>Welcome back, <span id="current-player-name" class="highlight"></span>!</h2>
+            <div class="hub-actions">
+               <button id="btn-logout" class="secondary-btn">Switch Player</button>
+               <a href="stats.html" class="secondary-btn">View Statistics</a>
+            </div>
+
+            <h3 class="mt-8">Select a Game</h3>
+            <div class="game-grid">
+                <a href="4-in-a-row.html" class="game-card">
+                    <div class="game-icon">🔴🟡</div>
+                    <h4>4-in-a-Row</h4>
+                    <p>Connect 4 to win. Real-time multiplayer strategy.</p>
+                </a>
+                <!-- Future games can be added here -->
+                <div class="game-card coming-soon">
+                    <div class="game-icon">❓</div>
+                    <h4>More Games Coming Soon</h4>
+                    <p>Stay tuned for new additions.</p>
+                </div>
+            </div>
+        </main>
+
+    </div>
+    <script src="hub.js"></script>
+</body>
+</html>

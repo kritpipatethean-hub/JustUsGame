@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistics - Easy Brain Game Hub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <a href="index.html" class="back-link">← Back to Hub</a>
+            <h2 class="glow-text" style="font-size: 2rem; margin:0;">Statistics</h2>
+        </div>
+
+        <main class="glass-panel" style="width: 100%; max-width: 600px; margin: 0 auto;">
+            <h3 style="margin-bottom: 1.5rem">4-in-a-Row Records</h3>
+            
+            <div class="stat-card" style="border-left: 5px solid var(--earth-color);">
+                <h4 class="earth-text" style="font-size: 1.5rem; margin-bottom: 1rem;">Earth</h4>
+                <div class="stat-row"><span>Wins:</span> <span id="earth-wins" class="stat-value">0</span></div>
+                <div class="stat-row"><span>Losses:</span> <span id="earth-losses" class="stat-value">0</span></div>
+                <div class="stat-row"><span>Draws:</span> <span id="earth-draws" class="stat-value">0</span></div>
+            </div>
+
+            <div class="stat-card" style="border-left: 5px solid var(--noon-color);">
+                <h4 class="noon-text" style="font-size: 1.5rem; margin-bottom: 1rem;">Noon</h4>
+                <div class="stat-row"><span>Wins:</span> <span id="noon-wins" class="stat-value">0</span></div>
+                <div class="stat-row"><span>Losses:</span> <span id="noon-losses" class="stat-value">0</span></div>
+                <div class="stat-row"><span>Draws:</span> <span id="noon-draws" class="stat-value">0</span></div>
+            </div>
+            
+            <p id="stats-status" style="margin-top:1rem;color:var(--text-muted);font-size:0.9rem;">Loading live stats from Firebase...</p>
+        </main>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.8.1/firebase-database-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="stats.js"></script>
+</body>
+</html>
