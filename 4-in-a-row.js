@@ -178,11 +178,11 @@ async function recordStat(result) {
 }
 
 function initGameInDB() {
-    const emptyBoard = Array(ROWS).fill(null).map(() => Array(COLS).fill(null));
+    const emptyBoard = Array(ROWS).fill("").map(() => Array(COLS).fill(""));
     gameState = {
         board: emptyBoard,
         currentTurn: PLAYER_1, // Earth goes first always on reset
-        winner: null,
+        winner: "",
         timestamp: Date.now()
     };
     updateFirebaseState();
@@ -197,6 +197,16 @@ btnReset.addEventListener('click', initGameInDB);
 db.ref(`games/${GAME_ID}`).on('value', (snapshot) => {
     if (snapshot.exists()) {
         gameState = snapshot.val();
+        
+        // Safeguard: Firebase removes nulls/empty arrays, so we must pad the board
+        if (!gameState.board) gameState.board = [];
+        for (let r = 0; r < ROWS; r++) {
+            if (!gameState.board[r]) gameState.board[r] = [];
+            for (let c = 0; c < COLS; c++) {
+                if (!gameState.board[r][c]) gameState.board[r][c] = "";
+            }
+        }
+        
         updateUI();
     } else {
         // First time initialization
