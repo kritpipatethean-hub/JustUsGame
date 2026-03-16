@@ -8,8 +8,8 @@ const firebaseConfig = {
     messagingSenderId: "88545419124",
     appId: "1:88545419124:web:dfaf9bb01cc0f072fc9621",
     measurementId: "G-7TG7WL6RNS",
-    // Guessed databaseURL as provided earlier
-    databaseURL: "https://justus-462d5-default-rtdb.asia-southeast1.firebasedatabase.app" 
+    // Exact databaseURL required for asia-southeast1
+    databaseURL: "https://justus-462d5-default-rtdb.asia-southeast1.firebasedatabase.app"
 };
   
 // Initialize Firebase using compat syntax
